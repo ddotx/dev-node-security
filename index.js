@@ -1,3 +1,4 @@
+const createHandler = require('azure-function-express').createHandler;
 const express = require('express')
 const fs = require('fs').promises
 const path = require('path')
@@ -13,6 +14,12 @@ app.use(cors({
 
 app.use(express.json())
 app.use(express.urlencoded())
+
+app.get('/api/hello-world', (req, res) => {
+res.json({
+status: 'Welocme to Express App: Hello-world'
+});
+});
 
 app.get('/api', (req, res) => {
   res.setHeader('Content-Type', 'text/html')
@@ -58,4 +65,4 @@ async function listProducts (req, res) {
 //     console.log(`server listening on port ${port}`)
 // })
 
-module.exports = app
+module.exports = createHandler(app)
