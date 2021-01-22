@@ -20,20 +20,20 @@ app.get('/api', (req, res) => {
   res.end(`Hello!`)
 })
 
-app.get('/', (req, res) => {
-    res.status(200).json({
-        msg: 'success'
-    })
-})
+// app.get('/', (req, res) => {
+//     res.status(200).json({
+//         msg: 'success'
+//     })
+// })
 
 
-app.get('/products', listProducts)
+app.get('/api/products', listProducts)
 
-app.get('/form', (req, res) => {
+app.get('/api/form', (req, res) => {
     res.send('get form')
 })
 
-app.post('/form', (req, res) => {
+app.post('api/form', (req, res) => {
     // console.log('req', req)
     const formData = req.body
     // res.sendStatus(204)
