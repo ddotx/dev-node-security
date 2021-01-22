@@ -8,6 +8,10 @@ app.get('/', (req, res) => {
     })
 })
 
+app.post('/form', (req, res) => {
+    res.sendStatus(204)
+})
+
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
