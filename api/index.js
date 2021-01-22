@@ -14,6 +14,12 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded())
 
+app.get('/api', (req, res) => {
+  res.setHeader('Content-Type', 'text/html')
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
+  res.end(`Hello!`)
+})
+
 app.get('/', (req, res) => {
     res.status(200).json({
         msg: 'success'
@@ -46,10 +52,10 @@ async function listProducts (req, res) {
     }
 }
 
-const port = process.env.PORT || 3000
+// const port = process.env.PORT || 3000
 
-app.listen(port, () => {
-    console.log(`server listening on port ${port}`)
-})
+// app.listen(port, () => {
+//     console.log(`server listening on port ${port}`)
+// })
 
 module.exports = app
