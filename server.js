@@ -6,9 +6,9 @@ const cors = require('cors')
 const app = express()
 
 app.use(cors({
-    // origin: '*'
+    origin: '*'
     // origin: 'https://objective-snyder-f1032e.netlify.app'
-    origin: ['http://54.179.105.221', 'https://objective-snyder-f1032e.netlify.app', 'http://52.204.27.193']
+    // origin: ['http://54.179.105.221', 'https://objective-snyder-f1032e.netlify.app', 'http://52.204.27.193']
     // origin: ['http://localhost:4200', 'https://objective-snyder-f1032e.netlify.app']
 }))
 
