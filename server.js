@@ -28,6 +28,11 @@ app.get('/form', (req, res) => {
     res.send('get form')
 })
 
+app.post('/', (req, res) => {
+    const data = req.body
+    res.json(data)
+})
+
 app.post('/form', (req, res) => {
     // console.log('req', req)
     const formData = req.body
