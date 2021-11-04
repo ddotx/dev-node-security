@@ -30,7 +30,7 @@ app.get('/form', (req, res) => {
 
 app.post('/', (req, res) => {
     const authHeader = req.headers.authorization
-    if(authHeader === 'XXX') {
+    if(authHeader === 'TYREPLUSICARE') {
         const data = req.body
         res.json(data)
     }
