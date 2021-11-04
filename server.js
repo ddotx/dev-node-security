@@ -29,8 +29,17 @@ app.get('/form', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    const data = req.body
-    res.json(data)
+    const authHeader = req.headers.authorization
+    if(authHeader === 'XXX') {
+        const data = req.body
+        res.json(data)
+    }
+    else {
+        res.status(500).json({
+            mes: 'error'
+        })
+    }
+
 })
 
 app.post('/form', (req, res) => {
